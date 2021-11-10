@@ -46,8 +46,7 @@
   @media screen and (max-width:932px){
     *{
       position: relative;
-      /* width: 100%; */
-      /* display: block; */
+     
       text-align: center;
     }
 
