@@ -54,9 +54,7 @@
   }
   @media screen and (max-width: 700px) {
     .navbar-nav {
-      flex-direction: column;
-      /* width: 100%; */
-      
+      flex-direction: column;      
     }
   
     .navbar-nav .nav-link {
