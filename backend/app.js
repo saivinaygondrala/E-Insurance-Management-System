@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyparser.json());
 var db;
 var user = "";
-mongodb.connect("mongodb+srv://saivinay:saivinay@cluster0.n2mzf.mongodb.net/Insurance?retryWrites=true&w=majority", (error, result) => {
+mongodb.connect("<replace it with mongodb cluster connection url>", (error, result) => {
     if (error) {
         console.log("Error Occured at Database");
     } else {
