@@ -1,0 +1,62 @@
+<app-leftpanel></app-leftpanel>
+
+<div class="container">
+    <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="panel-title text-center">Edit The Policy</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+                <p class="alert alert-success" *ngIf="clicked">
+                    <span> <span class="fas fa-check-circle"></span> {{msg}}</span>
+                    <!-- <span><span class="fas fa-exclamation-triangle" *ngIf="!isSuccess"> </span> {{msg}}</span> -->
+                </p>
+                
+                <form #f="ngForm" (submit)="EditPolicy(f)"  *ngIf="policydata">
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fas fa-clinic-medical"></i></span>
+                        <input type="text" class="form-control" name="ucompanyname" [ngModel]="policydata.ucompanyname" placeholder="Username"
+                            #ucompanyname="ngModel" required minlength="6" autocomplete="off">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fas fa-bed"></i></span>
+                        <input type="text" class="form-control" name="uamount" [ngModel]="policydata.uamount" #uamount="ngModel"
+                            placeholder="text" required  autocomplete="off">
+                    </div>
+                    
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+                        <input type="text" class="form-control" name="policy" #policy="ngModel" [ngModel]="policydata.policy"
+                              autocomplete="off">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+                        <input type="text" class="form-control" name="uinsurancename" [ngModel]="policydata.uinsurancename" 
+                           #uinsurancename="ngModel"   autocomplete="off">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+                        <input type="text" class="form-control" name="ulifecover" [ngModel]="policydata.ulifecover" 
+                           #ulifecover="ngModel" required  autocomplete="off">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fas fa-address-card"></i></span>
+                        <input type="text" class="form-control" name="uclaimsettle" [ngModel]="policydata.uclaimsettle" 
+                           #uclaimsettle="ngModel"   autocomplete="off">
+                    </div>
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 text-center">
+                            <input type="submit" class="btn btn-danger" value="Update" />
+                           
+                        </div>
+                    </div>
+                </form>
+                <br> <br><br>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

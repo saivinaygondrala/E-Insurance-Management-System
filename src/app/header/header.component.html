@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light navbar"  style="border-radius:0px;">
+    <div class="container-fluid">
+      <div class="navbar-header tocenter">
+        <div class="getspace navbrand">
+          <a routerLink="/">
+       <img src="../../assets/favicon.ico" alt="" width="50px"></a>
+      </div>
+      </div>
+      <div>
+      <ul class="nav navbar-nav navbar-right ">
+        <li style="padding: 10px;"><a routerLink="/home" class="button"><span class="fas fa-home" ></span>&nbsp;&nbsp;Home</a></li>
+        <li style="padding: 10px;" *ngIf="userSer.isLoggedIn()"><a routerLink="/Dashboard" class="button"><span class="fas fa-tachometer-alt" ></span>&nbsp;&nbsp;Dashboard</a></li>
+        <li style="padding: 10px;" *ngIf="userSer.isAdminLoggedIn()"><a routerLink="/aDashboard" class="button"><span class="fas fa-shield-alt"></span>&nbsp;&nbsp;Dashboard</a></li>      
+        <li style="padding: 10px;" *ngIf="!userSer.isAdminLoggedIn()"><a routerLink="/AllServices" class="button"><span class="glyphicon glyphicon-cog" ></span>&nbsp;&nbsp;Services</a></li>
+        <li style="padding: 10px;" *ngIf="!userSer.isAdminLoggedIn()"><a href="mailto:rasteam@outlook.com" class="button"><span class="fas fa-phone" ></span>&nbsp;&nbsp;Contact Us</a></li>
+        <li style="padding: 10px;" *ngIf="!(userSer.isLoggedIn()||userSer.isAdminLoggedIn())"><a routerLink="/SignUp" class="button"><span class="fas fa-user-plus"></span> &nbsp;&nbsp;Sign Up</a></li>   
+        <li style="padding: 10px;" *ngIf="!(userSer.isLoggedIn()||userSer.isAdminLoggedIn())">
+          <a routerLink="/Login" class="button"> <span class="fas fa-sign-in-alt"></span> &nbsp;&nbsp;Login</a>
+        </li>    
+        <li style="padding: 10px;" *ngIf="userSer.isLoggedIn()"><a  (click)="doLoggOut()" class="button"> <span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
+        <li style="padding: 10px;" *ngIf="userSer.isAdminLoggedIn()"><a  (click)="adminLogout()" class="button"> <span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
+        <li style="padding: 10px;" *ngIf="!(userSer.isAdminLoggedIn() || userSer.isLoggedIn())"><a routerLink="/AdminLogin" class="button"> <span class="fas fa-user-shield"></span> &nbsp;&nbsp;Admin</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>

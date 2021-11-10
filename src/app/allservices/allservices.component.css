@@ -1,0 +1,38 @@
+table {
+    width:70vw;
+   
+    overflow-x: hidden;
+    
+  }
+   body{
+    margin: 100;
+    font-family: "Lato", sans-serif;
+  }
+.conatiner{
+  position: relative;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  left:500px;
+padding: 20px;
+  background-color:#292b2c;
+  color: white;
+  width: 30%;
+  height: 50%;
+  border-radius: 10px;
+  margin: 100px;
+}
+
+  div.content {
+    margin-left: 300px;
+    width: 80%;
+   
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+   
+    div.content {margin-left: 0;}
+  }
+  
+  

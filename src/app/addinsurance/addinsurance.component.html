@@ -1,0 +1,53 @@
+<app-leftpanel></app-leftpanel>
+<div class="container">
+  <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+          <div class="panel-heading">
+              <div class="panel-title text-center">Add Insurance Policy</div>
+          </div>
+          <div style="padding-top:30px" class="panel-body">
+            <p class="alert alert-success" *ngIf="success"> <span class="fas fa-check-circle"></span> Successfully Added the policy and redirected to Allpolicies</p>
+              <form #f="ngForm" (submit)="addInsurancePolicy(f)">
+                  <div style="margin-bottom: 25px" class="input-group">
+                      <span class="input-group-addon"><i class="fas fa-clinic-medical"></i></span>
+                      <input type="text" id="uname" class="form-control" ngModel name="ucompanyname" placeholder="Providers Ex: LIC" required>
+                  </div>
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class="fas fa-bed"></i></span>
+                  <input type="text" id="uname" class="form-control" ngModel name="uinsurancename" placeholder="Type of Insurance Ex: Life Insurance" required>
+              </div>
+              <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+                <input type="text" id="uamount" class="form-control" name="uamount" placeholder="Price Ex: ₹20/Day" required ngModel>
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+              <input type="text" id="ulifecover" class="form-control" name="ulifecover" placeholder="Lifecover Ex: ₹1CR" required ngModel>
+          </div>
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+            <input type="text" id="uclaimsettle" class="form-control" name="uclaimsettle" placeholder="Claim Settle Ex: 99.40%" required ngModel> 
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon"><i class="fas fa-address-card"></i></span>
+          <input type="text" id="policy" class="form-control" name="policy" placeholder="Ex: ICICI ISmart Protect" required ngModel> 
+      </div>
+        
+                  <div style="margin-top:10px" class="form-group">
+                      <!-- Button -->
+                      <div class="col-sm-12 text-center">
+                          <input type="submit" class="btn btn-primary" value="Add Policy" [disabled]="f.invalid" />
+                          &nbsp;
+                          
+                      </div>
+                  </div>
+              </form>
+              <br> 
+              <br>
+              <br>
+          </div>
+      </div>
+  </div>
+
+
+</div>
