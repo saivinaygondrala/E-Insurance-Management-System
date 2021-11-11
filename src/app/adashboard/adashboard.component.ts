@@ -57,6 +57,7 @@ export class AdashboardComponent implements OnInit {
     if (confirm("Are you sure wanna delete User")) {
       this.userSer.dropCollection(this.deleteTheUser).subscribe((data:any)=>{
         console.log(data);
+        this.ngOnInit();
       },(error:any)=>{
         console.log(error);
       })

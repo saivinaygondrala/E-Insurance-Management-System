@@ -32,7 +32,7 @@ res:boolean=false;
       }
     })
   }
-  print(){
+  print(){this.ngOnInit();
     const printContent = document.getElementById("tableofcontent");
   const WindowPrt = window.open('', '', 'left=0,top=0,width=900,height=500');
   WindowPrt.document.write(printContent.innerHTML);

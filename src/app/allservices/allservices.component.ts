@@ -59,7 +59,7 @@ export class AllservicesComponent implements OnInit {
   }
   saveDetails(id:Number,i:number){
     this.isClicked=true;
-      this.id=id;
+    this.id=id;
       this.i=i;
       for(let i=0;i<this.policies.length;i++){
         if(this.policies[i]._id==this.id){
@@ -71,6 +71,8 @@ export class AllservicesComponent implements OnInit {
           console.log(this.policyAmount);
         }
       }
+     window.scroll(0,0);
+      
   }
   doSearch(data:string){
     this.userser.searchProvider(data).subscribe((data:any[])=>{

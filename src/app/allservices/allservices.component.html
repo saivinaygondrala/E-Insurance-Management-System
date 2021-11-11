@@ -49,7 +49,7 @@
 
       <h3>Amount : {{policyAmount}}</h3>
       <br>
-      <button class="btn btn-danger" (click)="clicked()"> <span class="fas fa-credit-card"></span>  &nbsp;&nbsp; Do Payment</button>
+      <button class="btn btn-danger" (click)="clicked()"><a href=""></a> <span class="fas fa-credit-card"></span>  &nbsp;&nbsp; Do Payment</button>
   </div>
   </div>
   <div  *ngIf="isAleadyApplied">
@@ -58,4 +58,5 @@
   <div class="text-center" *ngIf="!isAleadyApplied && paymentbtnClick">
     <p class="fas fa-check-circle "><span> &nbsp; Successfully Applied</span></p>
   </div>
+  <div class="freespace"></div>
 </div>

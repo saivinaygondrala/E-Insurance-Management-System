@@ -9,18 +9,25 @@ table {
     font-family: "Lato", sans-serif;
   }
 .conatiner{
-  position: relative;
+  position: absolute;
+  top: 200px;
   float: left;
   align-items: center;
   justify-content: center;
   left:500px;
-padding: 20px;
+  padding: 20px;
   background-color:#292b2c;
   color: white;
   width: 30%;
   height: 50%;
   border-radius: 10px;
   margin: 100px;
+
+}
+.freespace{
+  width: 100px;
+  height: 100px;
+  
 }
 
   div.content {
