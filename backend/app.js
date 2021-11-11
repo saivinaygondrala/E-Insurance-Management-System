@@ -40,13 +40,11 @@ app.post("/SignUp", (req, res) => {
                     res.status(403).json("Error on making the collection");
                 } else {
                     res.json("Successfully Registered");
-
                 }
             })
         }
     })
 })
-
 app.post("/createDatabase/:username", (req, res) => {
     console.log(req.params.username);
     db.createCollection(req.params.username);
@@ -100,7 +98,6 @@ app.get("/allUsers", (req, res) => {
     db.collection("users").find(null, { projection: { upassword: 0 } }).toArray((error, data) => {
         if (error) {
             res.status(403).json("Error in finding the doc");
-
         } else {
             res.json(data);
         }
