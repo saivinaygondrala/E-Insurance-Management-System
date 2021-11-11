@@ -1,6 +1,6 @@
 const express = require("express");
 const keys=require("./key");
-//------------------------------------------------------------------------------------------
+//The key.js is the file which consists of the mongodb cluster connection string
 const app = express();
 const cors = require("cors");
 const bodyparser = require("body-parser");
