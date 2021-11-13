@@ -12,7 +12,7 @@
         <li style="padding: 10px;" *ngIf="userSer.isLoggedIn()"><a routerLink="/Dashboard" class="button"><span class="fas fa-tachometer-alt" ></span>&nbsp;&nbsp;Dashboard</a></li>
         <li style="padding: 10px;" *ngIf="userSer.isAdminLoggedIn()"><a routerLink="/aDashboard" class="button"><span class="fas fa-shield-alt"></span>&nbsp;&nbsp;Dashboard</a></li>      
         <li style="padding: 10px;" *ngIf="!userSer.isAdminLoggedIn()"><a routerLink="/AllServices" class="button"><span class="glyphicon glyphicon-cog" ></span>&nbsp;&nbsp;Services</a></li>
-        <li style="padding: 10px;" *ngIf="!userSer.isAdminLoggedIn()"><a href="mailto:rasteam@outlook.com" class="button"><span class="fas fa-phone" ></span>&nbsp;&nbsp;Contact Us</a></li>
+        <li style="padding: 10px;" *ngIf="!userSer.isAdminLoggedIn()"><a href="mailto:RASINSURANCETEAM@outlook.com" class="button"><span class="fas fa-phone" ></span>&nbsp;&nbsp;Contact Us</a></li>
         <li style="padding: 10px;" *ngIf="!(userSer.isLoggedIn()||userSer.isAdminLoggedIn())"><a routerLink="/SignUp" class="button"><span class="fas fa-user-plus"></span> &nbsp;&nbsp;Sign Up</a></li>   
         <li style="padding: 10px;" *ngIf="!(userSer.isLoggedIn()||userSer.isAdminLoggedIn())">
           <a routerLink="/Login" class="button"> <span class="fas fa-sign-in-alt"></span> &nbsp;&nbsp;Login</a>

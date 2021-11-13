@@ -6,6 +6,10 @@ const cors = require("cors");
 const bodyparser = require("body-parser");
 const mongodb = require("mongodb").MongoClient;
 const e = require("cors");
+const nodemailer=require("nodemailer");
+const mailid=require("./umail");
+const password=require("./upassword");
+var selectedPolicyId;
 //Routes and backend Logics Must resides on app.js
 //NodeJS Middlewares
 //The middle ware will be like a intermediate checks
@@ -14,9 +18,15 @@ app.use(cors());
 app.use(bodyparser.json());
 var db;
 var user = "";
+var transporter=nodemailer.createTransport({
+    service: 'outlook',
+    auth:{
+        user:mailid,
+        pass:password,
+    }
+});
 
 mongodb.connect(keys, (error, result) => {
-
     if (error) {
         console.log("Error Occured at Database");
     } else {
@@ -142,6 +152,33 @@ app.get("/userselectedpolicy/:uname", (req, res) => {
             res.json(data);
         }
     })
+})
+app.get("/GetMailId/:mailid",(req,res)=>{
+    var theData;
+    db.collection("AllPolicies").find({ _id: Number(selectedPolicyId) }).toArray((error, data) => {
+        if(error){
+            res.status(403).json("Something went wrong");
+        }else{
+            res.json("Success");
+            theData=data;
+        }
+    })
+    var mailOptions={
+        from:"RASINSURANCETEAM@outlook.com",
+        to:req.params.mailid,
+        subject:'Applied to the Policy',
+        text:'Successfully applied to the '+theData[0].policy
+    }
+    transporter.sendMail(mailOptions,function(error,data){
+        if(error){
+            console.log(error);
+        }else{
+            console.log("Email sent: "+data.response);
+        }
+    })
+})
+app.get("/PolicyId/:policyid",(req,res)=>{
+    selectedPolicyId=req.params.policyid;
 })
 app.get("/AllPolicies", (req, res) => {
     db.collection("AllPolicies").find(null).toArray((error, data) => {
