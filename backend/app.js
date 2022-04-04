@@ -1,5 +1,5 @@
 const express = require("express");
-const keys=require("./key");
+
 //The key.js is the file which consists of the mongodb cluster connection string
 const app = express();
 const cors = require("cors");
@@ -7,8 +7,7 @@ const bodyparser = require("body-parser");
 const mongodb = require("mongodb").MongoClient;
 const e = require("cors");
 const nodemailer=require("nodemailer");
-const mailid=require("./umail");
-const password=require("./upassword");
+
 var selectedPolicyId;
 //Routes and backend Logics Must resides on app.js
 //NodeJS Middlewares
@@ -18,15 +17,9 @@ app.use(cors());
 app.use(bodyparser.json());
 var db;
 var user = "";
-var transporter=nodemailer.createTransport({
-    service: 'outlook',
-    auth:{
-        user:mailid,
-        pass:password,
-    }
-});
 
-mongodb.connect(keys, (error, result) => {
+
+mongodb.connect("mongodb+srv://saivinay:saivinay@cluster0.n2mzf.mongodb.net/Insurance?retryWrites=true&w=majority", (error, result) => {
     if (error) {
         console.log("Error Occured at Database");
     } else {

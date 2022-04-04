@@ -8,80 +8,80 @@ export class UserService {
   len:number;
 
   isUNameAvailable(username: string) {
-    return this.http.get<any[]>("http://localhost:3000/unameAvailable/"+username);
+    return this.http.get<any[]>("unameAvailable/"+username);
   }
   setTheUser(uname:string){
-    return this.http.get<string>("http://localhost:3000/setUser/"+uname);
+    return this.http.get<string>("setUser/"+uname);
   }
   userRegistration(data: any) {
-    return this.http.post<string>("http://localhost:3000/SignUp",data);
+    return this.http.post<string>("SignUp",data);
   }
   createDatabase(username: string) {
-    return this.http.get<any[]>("http://localhost:3000/createDatabase/"+username)
+    return this.http.get<any[]>("createDatabase/"+username)
   }
   constructor(public http:HttpClient) { }
   isLoggedIn(){
     return !!localStorage.getItem("LoggedUser");
   }
   getAllUsernames(){
-    return this.http.get<any[]>("http://localhost:3000/getAllUsernames/");
+    return this.http.get<any[]>("getAllUsernames/");
   }
   userSelectedPolicy(uname:string){
-    return this.http.get<any[]>("http://localhost:3000/userselectedpolicy/"+uname);
+    return this.http.get<any[]>("userselectedpolicy/"+uname);
   }
   isAdminLoggedIn(){
     return !!localStorage.getItem("AdminLoggedUser");
   }
   doUserLogin(data:any){
-    return this.http.post<any[]>("http://localhost:3000/Login",data);
+    return this.http.post<any[]>("Login",data);
   }
   doAdminLogin(data:any){
-    return this.http.post<any[]>("http://localhost:3000/AdminLogin",data);
+    return this.http.post<any[]>("AdminLogin",data);
   }
 
   getAllUsers(){
-    return this.http.get<any[]>("http://localhost:3000/allUsers/");
+    return this.http.get<any[]>("allUsers/");
   }
   setToMyPolicy(data:any){
-    return this.http.post<string>("http://localhost:3000/setToMyPolicy",data);
+    return this.http.post<string>("setToMyPolicy",data);
   }
   dropCollection(data:string){
-    return this.http.get<any[]>("http://localhost:3000/dropcollection/"+data);
+    return this.http.get<any[]>("dropcollection/"+data);
   }
   deleteUserData(userid:number){
-    return this.http.delete<string>("http://localhost:3000/deleteUser/"+userid);
+    return this.http.delete<string>("deleteUser/"+userid);
   }
   searchUsers(searchdata:string){
-    return this.http.get<any[]>("http://localhost:3000/searchUser/"+searchdata);
+    return this.http.get<any[]>("searchUser/"+searchdata);
   }
   getAllPolicies(){
-    return this.http.get<any[]>("http://localhost:3000/allpolicies/");  
+    return this.http.get<any[]>("allpolicies/");  
   }
   searchProvider(searchdata:string){
-    return this.http.get<any[]>("http://localhost:3000/searchProvider/"+searchdata);
+    return this.http.get<any[]>("searchProvider/"+searchdata);
   }
   deletePolicy(policyid:number){
-    return this.http.delete<string>("http://localhost:3000/deletePolicy/"+policyid);
+    return this.http.delete<string>("deletePolicy/"+policyid);
   }
   addpolicy(data:any){
-    return this.http.post<any[]>("http://localhost:3000/AddPolicy",data);
+    return this.http.post<any[]>("AddPolicy",data);
   }
   getAllMyPolicies(){
-    return this.http.get<any[]>("http://localhost:3000/allmypolicies/");  
+    return this.http.get<any[]>("allmypolicies/");  
   }
   getProfileData(userid:string){
-    return this.http.get<any[]>("http://localhost:3000/getprofileData/"+userid);
+    return this.http.get<any[]>("getprofileData/"+userid);
   }
   editSingleUserData(data:any){
-    return this.http.put<string>("http://localhost:3000/updateUser",data);
+    return this.http.put<string>("updateUser",data);
   }
   editSinglePolicyData(data:any){
-    return this.http.put<any[]>("http://localhost:3000/updatePolicy",data);
+    return this.http.put<any[]>("updatePolicy",data);
   }
   getSinglePolicyData(policyid:string){
-    return this.http.get<any[]>("http://localhost:3000/getSinglePolicyDetails/"+policyid);
+    return this.http.get<any[]>("getSinglePolicyDetails/"+policyid);
   }
   getSingleUserData(userid:string){
-    return this.http.get<any[]>("http://localhost:3000/getSingleUserDetails/"+userid);
+    return this.http.get<any[]>("getSingleUserDetails/"+userid);
   }
 }
